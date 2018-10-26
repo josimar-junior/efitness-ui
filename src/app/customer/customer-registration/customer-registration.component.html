@@ -1,0 +1,31 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <form>
+      <p-panel header="Customer registration">
+        <div class="ui-g">
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="name" class="required">Name</label>
+            <input pInputText id="name" name="name" required />
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="cpf" class="required">CPF</label>
+            <p-inputMask id="cpf" name="cpf" mask="999.999.999-99" required></p-inputMask>
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="email" class="required">Email</label>
+            <input pInputText id="email" name="email" type="email" required/>
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+              <label for="status" class="required">Status</label>
+              <p-selectButton id="status" name="status" [options]="status" [(ngModel)]="selectedStatus" required></p-selectButton>
+          </div>
+        </div>
+      </p-panel>
+      <app-required-fields></app-required-fields>
+    </form>
+  </div>
+</div>
