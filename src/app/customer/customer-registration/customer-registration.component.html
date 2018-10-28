@@ -1,12 +1,12 @@
 <div class="ui-g">
   <div class="ui-g-12">
-    <form>
+    <form autocomplete="off" #frm="ngForm">
       <p-panel header="Customer registration">
         <div class="ui-g">
 
           <div class="ui-g-3 ui-fluid">
             <label for="name" class="required">Name</label>
-            <input pInputText id="name" name="name" required />
+            <input pInputText id="name" name="name" required [(ngModel)]="name"/>
           </div>
 
           <div class="ui-g-3 ui-fluid">
@@ -16,12 +16,62 @@
 
           <div class="ui-g-3 ui-fluid">
             <label for="email" class="required">Email</label>
-            <input pInputText id="email" name="email" type="email" required/>
+            <input pInputText id="email" name="email" type="email" required />
           </div>
 
           <div class="ui-g-3 ui-fluid">
-              <label for="status" class="required">Status</label>
-              <p-selectButton id="status" name="status" [options]="status" [(ngModel)]="selectedStatus" required></p-selectButton>
+            <label for="status" class="required">Status</label>
+            <p-selectButton id="status" name="status" [options]="status" [(ngModel)]="selectedStatus" required></p-selectButton>
+          </div>
+        </div>
+
+        <div class="ui-g">
+          <div class="ui-g-3 ui-fluid">
+            <label for="birth">Birth</label>
+            <p-calendar id="birth" name="birth" dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dia/mês/ano"
+              [locale]="locale.pt"></p-calendar>
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="beginningOfTraining" class="required">Beginning of training</label>
+            <p-calendar id="beginningOfTraining" name="beginningOfTraining" dateFormat="dd/mm/yy" [showIcon]="true"
+              placeholder="dia/mês/ano" [locale]="locale.pt"></p-calendar>
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="phone" class="required">Phone</label>
+            <p-inputMask id="phone" name="phone" mask="(99) 99999-9999" required></p-inputMask>
+          </div>
+        </div>
+
+        <div class="ui-g">
+          <div class="ui-g-3 ui-fluid">
+            <label for="state">State</label><br />
+            <p-dropdown id="state" [options]="states" [style]="{'width':'100%'}"></p-dropdown>
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="city">City</label>
+            <input pInputText id="city" name="city" />
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="street">Street</label>
+            <input pInputText id="street" name="street" />
+          </div>
+
+          <div class="ui-g-3 ui-fluid">
+            <label for="number">Number</label>
+            <input pInputText id="number" name="number" />
+          </div>
+        </div>
+        <br/>
+        <div class="ui-g">
+          <div class="ui-g-1 ui-fluid">
+            <p-button label="Save" icon="pi pi-save" iconPos="left" [disabled]="!frm.valid"></p-button>
+          </div>
+          <div class="ui-g-1 ui-fluid">
+            <p-button label="List" icon="pi pi-bars" iconPos="left" styleClass="ui-button-success"></p-button>
           </div>
         </div>
       </p-panel>

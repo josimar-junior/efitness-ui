@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocaleCalendar } from 'src/app/model/LocaleCalendar';
 
 @Component({
   selector: 'app-customer-registration',
@@ -7,16 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerRegistrationComponent implements OnInit {
 
+  name: string;
+
   status = [
-    { label: 'Ativo', value: true },
-    { label: 'Inativo', value: false }
+    { label: 'Active', value: true },
+    { label: 'Inactive', value: false }
+  ];
+
+  states = [
+    { label: 'CE', value: 'CE' },
+    { label: 'SP', value: 'SP' },
+    { label: 'RJ', value: 'RJ' }
   ];
 
   selectedStatus = true;
 
+  locale = new LocaleCalendar();
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

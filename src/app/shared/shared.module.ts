@@ -6,7 +6,9 @@ import { RequiredFieldsComponent } from './required-fields/required-fields.compo
   imports: [
     CommonModule
   ],
-  declarations: [RequiredFieldsComponent],
+  declarations: [
+    RequiredFieldsComponent
+  ],
   exports: [
     RequiredFieldsComponent
   ]
