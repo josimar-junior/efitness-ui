@@ -12,6 +12,7 @@ import { CoreModule } from './core/core.module';
 import { CustomerModule } from './customer/customer.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductModule } from './product/product.module';
+import { SecurityModule } from './security/security.module';
 
 registerLocaleData(localePt);
 
@@ -28,6 +29,7 @@ registerLocaleData(localePt);
     CoreModule,
     CustomerModule,
     ProductModule,
+    SecurityModule,
     AppRoutingModule
   ],
   providers: [

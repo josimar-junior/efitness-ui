@@ -1,0 +1,27 @@
+<div class="login">
+  <form autocomplete="off" #frm="ngForm">
+
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12">
+        <h1>Login</h1>
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label for="user">User</label>
+        <input pInputText type="text" id="user" name="user" placeholder="User" required [(ngModel)]="user">
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label for="password">Password</label>
+        <input pInputText type="password" id="password" name="password" placeholder="Password" required [(ngModel)]="password">
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <p-button label="Login" icon="pi pi-sign-in" iconPos="left" [disabled]="!frm.valid" (onClick)="login()"></p-button>
+        <a href="#" style="margin-left:50px">I forgot my password</a>
+      </div>
+
+    </div>
+
+  </form>
+</div>
