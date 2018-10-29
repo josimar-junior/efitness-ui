@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductModule } from './product/product.module';
 import { SecurityModule } from './security/security.module';
 
+import { GrowlModule } from 'primeng/components/growl/growl';
+import { MessageService } from 'primeng/components/common/api';
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -30,10 +33,13 @@ registerLocaleData(localePt);
     CustomerModule,
     ProductModule,
     SecurityModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    GrowlModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'pt' }
+    { provide: LOCALE_ID, useValue: 'pt' },
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
