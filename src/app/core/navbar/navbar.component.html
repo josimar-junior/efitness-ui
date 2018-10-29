@@ -4,5 +4,6 @@
     <li><a routerLinkActive="active" [routerLink]="['/customers']">Customers</a></li>
     <li><a routerLinkActive="active" [routerLink]="['/products']">Products</a></li>
     <li><a href="#">Logout</a></li>
+    <li class="user">Welcome {{ auth.jwtPayload?.name }}!</li>
   </ul>
 </nav>
